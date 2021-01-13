@@ -1,0 +1,22 @@
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cust of customers; let i = index;">
+      <td>{{cust.date.split(" ", 3)}}</td>
+      <td>{{cust.date}}</td>
+      <td>{{cust.firstname}}</td>
+      <td>{{cust.lastname}}</td>
+      <td>{{cust.phone}}</td>
+      <td>{{cust.result}}</td>
+    </tr>
+  </tbody>
+</table>

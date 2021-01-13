@@ -1,0 +1,29 @@
+export default class Customers {
+    Answer1: string;
+    Answer2: string;
+    Answer3: string;
+    Answer4: string;
+    Answer5: string;
+    Answer6: string;
+    Answer7: string;
+    answer8: string;
+    Question1: string;
+    Question2: string;
+    Question3: string;
+    Question4: string;
+    Question5: string;
+    Question6: string;
+    Question7: string;
+    Question8: string;
+    date: string;
+    email: string;
+    firstname: string;
+    group: string;
+    language: string;
+    lastname: string;
+    location: string;
+    phone: string;
+    result: string;
+    type: string;
+    userId: string;
+}
