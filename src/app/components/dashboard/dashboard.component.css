@@ -1,0 +1,20 @@
+.tableHeader{
+    background-color: #1EB0FF;
+}
+.tableBody {
+    background-color: #16E2FF;
+
+}
+.tdContent {
+    color: white;
+
+}
+
+.table-dark {
+    color: white;
+    background-color: #343a40;
+}
+
+thead th {
+    background-color: #1EB0FF !important;;
+}

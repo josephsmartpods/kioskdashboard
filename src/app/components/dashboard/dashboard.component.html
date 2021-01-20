@@ -1,0 +1,79 @@
+<!-- Top navigation -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+
+  </a>
+</nav>
+
+<!-- Sidebar navigation -->
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class="fas fa-user"></i>KIOSK
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <div style="text-align:center">
+          <h1>
+            KIOSK Web Portal
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <!-- <h2>Xperigo - Moncton </h2> -->
+            <div class="row" *ngIf="authService.userData as user">
+              <h1><strong>{{(user.uid == 'lkfkHKQhEzM9HgZQp9dZcs4mjPb2') ? 'Xperigo - Moncton' : 'Sparx'}}</strong></h1>
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <table class="table table-striped table-dark">
+            <thead class="tableHeader">
+              <tr class="tableHeader">
+                <th scope="col">Date</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cust of customers; let i = index;" class="tdContent">
+                <td>{{cust.date}}</td>
+                <td>{{cust.firstname}}</td>
+                <td>{{cust.lastname}}</td>
+                <td>{{cust.phone}}</td>
+                <td>{{cust.result}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</div>
