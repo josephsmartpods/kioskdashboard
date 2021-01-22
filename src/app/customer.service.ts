@@ -18,13 +18,26 @@ export class CustomerService {
       this.authState = authState;
     });
 
-    if (this.authService.getUserId !== '') {
-      console.log('DB PATH: ' + this.authService.getUserId);
-      this.customersRef = db.list('/' + this.authService.getUserId);
-    } else {
-      console.log('DB PATH: empty');
-      this.customersRef = db.list(this.dbPath);
-    }
+    // if (this.authService.getUserId !== '') {
+    //   console.log('DB PATH: ' + this.authService.getUserId);
+    //   this.customersRef = db.list('/' + this.authService.getUserId);
+    // } else {
+    //   console.log('DB PATH: empty');
+    //   this.customersRef = db.list(this.dbPath);
+    // }
+    //console.log('Customer service: ' + JSON.stringify(this.firebaseAuth));
+
+    this.firebaseAuth.authState.subscribe(user => {
+      if(user) {
+        console.log('has user: ' + user?.uid);
+        this.dbPath = user?.uid
+        this.customersRef = db.list('/' + user?.uid);
+      } else {
+        console.log('no user');
+        this.customersRef = db.list(this.dbPath);
+      }
+    }) 
+
   }
 
   getAll(): AngularFireList<Customers> {

@@ -4,7 +4,6 @@ import { User } from '../services/user';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
-import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'
@@ -25,31 +24,42 @@ export class AuthService {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user')|| '');
+        //  JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', '');
-        JSON.parse(localStorage.getItem('user') || '');
+        //JSON.parse(localStorage.getItem('user'));
       }
     });
   }
 
-  //Sign in with email/password
-  SignIn(email: any, password: any) {
-    return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        console.log('result: ' + result);
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+  // Sign in with email/password
+  // SignIn(email: any, password: any) {
+  //   return this.afAuth.signInWithEmailAndPassword(email, password)
+  //     .then((result) => {
+  //       console.log('result: ' + result);
+  //       this.ngZone.run(() => {
+  //         this.router.navigate(['dashboard']);
           
-        });
+  //       });
+  //       this.SetUserData(result.user);
+  //     }).catch((error) => {
+  //       console.log('error signin result: ' + error);
+  //       if (error.message !== null) {
+  //         window.alert(error.message);
+  //       }
+  //     });
+  // }
+
+  async SignIn(email: any, password: any) {
+      const result = await this.afAuth.signInWithEmailAndPassword(email, password);
+
+      const succeeded = await this.router.navigate(['dashboard']);
+
+      if (succeeded) {
         this.SetUserData(result.user);
-      }).catch((error) => {
-        console.log('error signin result: ' + error);
-        if (error.message !== null) {
-          window.alert(error.message);
-        }
-      });
-  }
+      }
+    }
+
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
