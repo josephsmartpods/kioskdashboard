@@ -18,13 +18,12 @@ export class CustomerService {
       this.authState = authState;
     });
 
-
     if (this.authService.getUserId !== '') {
       console.log('DB PATH: ' + this.authService.getUserId);
       this.customersRef = db.list('/' + this.authService.getUserId);
     } else {
+      console.log('DB PATH: empty');
       this.customersRef = db.list(this.dbPath);
-
     }
   }
 

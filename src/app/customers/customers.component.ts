@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
+
 export class CustomersComponent implements OnInit {
 
   customers: any;

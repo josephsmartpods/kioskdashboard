@@ -1,4 +1,4 @@
-<div class="displayTable">
+<div class="displayTable" (keyup.enter)="authService.SignIn(userName.value, userPassword.value)">
   <div class="displayTableCell">
     <div class="authBlock">
       <h3>Sign In</h3>
