@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ExportDirective } from './export.directive';
 import { CustomersComponent } from './customers/customers.component';
 import { AuthService } from './shared/services/auth.service';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -17,6 +18,7 @@ import { environment } from '../environments/environment';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
