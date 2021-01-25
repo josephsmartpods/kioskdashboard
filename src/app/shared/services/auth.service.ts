@@ -39,7 +39,6 @@ export class AuthService {
   //       console.log('result: ' + result);
   //       this.ngZone.run(() => {
   //         this.router.navigate(['dashboard']);
-          
   //       });
   //       this.SetUserData(result.user);
   //     }).catch((error) => {
@@ -49,6 +48,10 @@ export class AuthService {
   //       }
   //     });
   // }
+
+          //SPKioskApp01
+        //experigoclient@gmail.com
+
 
   async SignIn(email: any, password: any) {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
