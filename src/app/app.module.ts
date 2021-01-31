@@ -37,8 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule,
-    MatExpansionModule
+    //BrowserAnimationsModule,
+    //MatExpansionModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

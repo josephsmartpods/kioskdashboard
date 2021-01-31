@@ -25,13 +25,14 @@ export class CustomerService {
     //   console.log('DB PATH: empty');
     //   this.customersRef = db.list(this.dbPath);
     // }
-    //console.log('Customer service: ' + JSON.stringify(this.firebaseAuth));
+    console.log('Customer service: ' + JSON.stringify(this.firebaseAuth));
 
     this.firebaseAuth.authState.subscribe(user => {
       if(user) {
-        console.log('has user: ' + user?.uid);
+        console.log('has user: ' + JSON.stringify(user));
         this.dbPath = user?.uid
         this.customersRef = db.list('/' + user?.uid);
+        //this.customersRef = db.list(this.dbPath);
       } else {
         console.log('no user');
         this.customersRef = db.list(this.dbPath);

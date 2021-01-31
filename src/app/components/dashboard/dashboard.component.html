@@ -39,7 +39,7 @@
           <div class="col-md-9">
             <!-- <h2>Xperigo - Moncton </h2> -->
             <div class="row" *ngIf="authService.userData as user">
-              <h1><strong>{{(user.uid == 'lkfkHKQhEzM9HgZQp9dZcs4mjPb2') ? 'Xperigo - Moncton' : 'Sparx'}}</strong></h1>
+              <h1><strong>{{(user.email == 'client1@gmail.com' || user.email == 'experigoclient@gmail.com ') ? 'Xperigo - Moncton' : 'Sparx'}}</strong></h1>
             </div>
           </div>
           <div class="col-md-3">

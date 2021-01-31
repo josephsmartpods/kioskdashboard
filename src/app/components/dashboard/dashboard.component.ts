@@ -38,11 +38,18 @@ export class DashboardComponent implements OnInit {
 
     //     console.log('asdasdasd: ' + user);
     // });
-
+    //SPKioskApp01
+    //experigoclient@gmail.com
     this.auth.authState.subscribe(user => {
       console.log('asdasdasd: ' + user?.uid);
+      var xperigoUID = "lkfkHKQhEzM9HgZQp9dZcs4mjPb2"
       if (user) {
-        this.retrieveCustomers(user?.uid);
+        if (user?.email == "experigoclient@gmail.com") {
+          this.retrieveCustomers(xperigoUID);
+        } else {
+          this.retrieveCustomers(user?.uid);
+        }
+        //this.retrieveCustomers(user?.uid);
       }
     });
 
