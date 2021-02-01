@@ -23,7 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-<<<<<<< HEAD
 @angular/animations
 MIT
 
@@ -52,8 +51,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-=======
->>>>>>> f603f4716502427e4d292a18a9f44c9d9c1c6396
 @angular/common
 MIT
 
@@ -63,7 +60,6 @@ MIT
 @angular/fire
 MIT
 
-<<<<<<< HEAD
 @angular/material
 MIT
 The MIT License
@@ -89,8 +85,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-=======
->>>>>>> f603f4716502427e4d292a18a9f44c9d9c1c6396
 @angular/platform-browser
 MIT
 

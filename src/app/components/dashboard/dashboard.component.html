@@ -95,7 +95,6 @@
               </thead>
               <tbody>
                 <tr *ngFor="let entries of cust.entries; let i = index;" class="tdContent">
-                  <!-- <td>{{entries.date}}</td> -->
                   <td>{{entries.key | date:'h:mm a'}}</td>
                   <td>{{entries.firstname}}</td>
                   <td>{{entries.lastname}}</td>
@@ -106,6 +105,7 @@
             </table>
           </mat-expansion-panel>
         </div>
+
       </div>
     </main>
 

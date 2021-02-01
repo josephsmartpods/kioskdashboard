@@ -82,7 +82,7 @@ export class DashboardComponent implements OnInit {
       });
 
       //group data
-      var groups = {};
+      var groups:{[key: string]: any[]} = {};
 
       groupdData.forEach(function (val: any) {
         if (val.datefilter in groups) {
@@ -97,7 +97,7 @@ export class DashboardComponent implements OnInit {
       let presentableData: any[] = [];
 
       Object.keys(groups).forEach(key => {
-        var _combine = {};
+        var _combine: {[key: string]: any} = {};
         _combine["key"] = key
         let value = groups[key];
         _combine["entries"] = value
@@ -118,8 +118,8 @@ export class DashboardComponent implements OnInit {
     let cust = this.customers[index];
 
     const datePipe = new DatePipe('en-US');
-    let today: Date = datePipe.transform(Date.now(), 'MMMM d, YYYY');
-    let custDate: Date = datePipe.transform(cust.key, 'MMMM d, YYYY');
+    let today: any = datePipe.transform(Date.now(), 'MMMM d, YYYY');
+    let custDate: any = datePipe.transform(cust.key, 'MMMM d, YYYY');
     return (today === custDate);
   }
 }
