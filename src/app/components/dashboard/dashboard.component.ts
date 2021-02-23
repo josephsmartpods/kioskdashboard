@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   customers: any;
   currentCustomer = null;
   currentIndex = -1;
-  title = '';
+  portalName = '';
 
   constructor(
     public authService: AuthService,
@@ -44,7 +44,18 @@ export class DashboardComponent implements OnInit {
       console.log('asdasdasd: ' + user?.uid);
       var xperigoUID = "lkfkHKQhEzM9HgZQp9dZcs4mjPb2"
       if (user) {
+
+         if (user.email == "client1@gmail.com") {
+          this.portalName = "Xperigo - Moncton"
+         } else if (user.email == "sparxclient@gmail.com") {
+          this.portalName = "Sparx"
+         } else if (user.email == "smartpodsclient@gmail.com") {
+          this.portalName = "Smartpods"
+         }  
+
+
         if (user?.email == "experigoclient@gmail.com") {
+          this.portalName = "Xperigo - Moncton"
           this.retrieveCustomers(xperigoUID);
         } else {
           this.retrieveCustomers(user?.uid);
