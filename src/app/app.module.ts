@@ -7,6 +7,8 @@ import { ExportDirective } from './export.directive';
 import { CustomersComponent } from './customers/customers.component';
 import { AuthService } from './shared/services/auth.service';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -19,6 +21,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomDialogComponent } from './components/custom-dialog/custom-dialog.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomersComponent,
     SignInComponent,
     DashboardComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CustomDialogComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

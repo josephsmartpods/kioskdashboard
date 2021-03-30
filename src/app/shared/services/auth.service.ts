@@ -49,19 +49,21 @@ export class AuthService {
   //     });
   // }
 
-          //SPKioskApp01
-        //experigoclient@gmail.com
+  
+  // async SignIn(email: any, password: any) {
 
+  //     const result = await this.afAuth.signInWithEmailAndPassword(email, password);
 
-  async SignIn(email: any, password: any) {
-      const result = await this.afAuth.signInWithEmailAndPassword(email, password);
+  //     const succeeded = await this.router.navigate(['dashboard']);
 
-      const succeeded = await this.router.navigate(['dashboard']);
+  //     if (succeeded) {
+  //       this.SetUserData(result.user);
+  //     }
+  //   }
 
-      if (succeeded) {
-        this.SetUserData(result.user);
-      }
-    }
+  SignIn(email: any, password: any) {
+    return this.afAuth.signInWithEmailAndPassword(email, password);
+  }
 
 
   // Returns true when user is looged in and email is verified

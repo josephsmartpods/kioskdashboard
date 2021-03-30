@@ -3,6 +3,12 @@
     <div class="authBlock">
       <h3>Sign In</h3>
       <div class="formGroup">
+        <div *ngIf="showloader" >
+          <mat-spinner style="margin:0 auto;" 
+          mode="indeterminate"></mat-spinner>
+        </div>
+      </div>
+      <div class="formGroup">
         <input type="text" class="formControl" placeholder="Username" #userName required>
       </div>
 
@@ -13,7 +19,7 @@
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">
         <input type="button" class="btn btnPrimary" value="Log in"
-          (click)="authService.SignIn(userName.value, userPassword.value)">
+          (click)="authenticateUser(userName.value, userPassword.value)">
       </div>
     </div>
   </div>
