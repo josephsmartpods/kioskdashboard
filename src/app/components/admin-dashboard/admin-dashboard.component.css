@@ -1,21 +1,23 @@
-.tableHeader{
-    background-color: #1EB0FF;
+.tableHeader {
+  background-color: #1eb0ff;
 }
 .tableBody {
-    background-color: #16E2FF;
-
+  background-color: #16e2ff;
 }
 .tdContent {
-    color: white;
-    height: 40px;
-
+  color: white;
+  height: 40px;
 }
 
 .table-dark {
-    color: white;
-    background-color: #343a40;
+  color: white;
+  background-color: #343a40;
 }
 
 thead th {
-    background-color: #1EB0FF !important;;
+  background-color: #1eb0ff !important;
+}
+
+.example-form-field {
+  margin-right: 20px;
 }

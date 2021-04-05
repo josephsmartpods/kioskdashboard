@@ -29,7 +29,7 @@ export class CustomerService {
 
     this.firebaseAuth.authState.subscribe(user => {
       if(user) {
-        console.log('has user: ' + JSON.stringify(user));
+        //console.log('has user: ' + JSON.stringify(user));
         this.dbPath = user?.uid
         this.customersRef = db.list('/' + user?.uid);
         //this.customersRef = db.list(this.dbPath);
@@ -37,7 +37,7 @@ export class CustomerService {
         console.log('no user');
         this.customersRef = db.list(this.dbPath);
       }
-    }) 
+    });
 
   }
 

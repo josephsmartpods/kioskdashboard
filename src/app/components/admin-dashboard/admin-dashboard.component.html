@@ -40,14 +40,42 @@
               <!-- <h2>Xperigo - Moncton </h2> -->
               <div class="row" *ngIf="authService.userData as user">
                 <!-- <h1><strong>{{(user.email == 'client1@gmail.com' || user.email == 'experigoclient@gmail.com ') ? 'Xperigo - Moncton' : 'Sparx'}}</strong></h1> -->
-                <h1><strong>Admin</strong></h1>
+                <h1><strong>Generate Report</strong></h1>
               </div>
             </div>
             <div class="col-md-3">
             </div>
           </div>
           <div class="pt-3 pb-2 mb-3 border-bottom">
-  
+            <div>
+                <h4>Users</h4>
+                <mat-form-field appearance="fill">
+                  <mat-label>Select user</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let customer of customers" [value]="customer.uid">
+                      {{customer.displayName}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+              <div>
+                <h4>Report Range</h4>
+                <mat-form-field appearance="fill">
+                  <mat-label>Select a date range</mat-label>
+                  <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                    <input matStartDate formControlName="start" placeholder="Start date">
+                    <input matEndDate formControlName="end" placeholder="End date">
+                  </mat-date-range-input>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-date-range-picker #picker>
+                        <mat-date-range-picker-actions>
+                          <button mat-button matDateRangePickerCancel>Cancel</button>
+                          <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+                        </mat-date-range-picker-actions>
+                  </mat-date-range-picker>
+                </mat-form-field>
+                <p>Selected range: {{range.value | json}}</p>
+              </div>
           </div>
           
   
